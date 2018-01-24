@@ -14,6 +14,7 @@ $grey: #f5f6f7;
 $white: #fff;
 $lightgreen: #1abc9c;
 $center: center;
+$black: #000;
 
 
 @mixin button-green($green){
@@ -77,19 +78,46 @@ header {
 		list-style-type: none;
 		padding: 40px 50px;
 	}
+	li:nth-of-type(3):hover {
+		opacity: 0.5;
+	}
 	
 	a {
 		color: $white;
 		text-transform: uppercase;
 		font-size: 1.8rem;
 		font-weight: 600;
+		transition: 0.5s;
 	}
 	
 	a:hover {
-		color: #DC9409;
-		opacity: 0.7;
+		color: $lightgreen;
+		font-weight: 800;
 	}
-
+	.dropdown {
+		display: none;
+		color: $white;
+		margin: 25px;
+		font-size: 1.1em;
+			i {
+				margin-top: 10px;
+			}
+			ul {
+				background-color: rgba(0, 0, 0, 0.8);
+				width: 100%;
+				li {
+					padding: 5px;
+					a {
+						color:$white
+					}
+					hr {
+						margin: 2px;
+						border-top: 1px solid #8a4949;
+					}
+				}
+			}
+		}
+	
 	.header-slogan {
 		display: flex;
 		flex-direction: column;
@@ -121,9 +149,10 @@ header {
 		font-size: 2.1em;
 		padding: 0 5px;
 		cursor: pointer;
+		transition: 1s;
 	}
 	i.fa:hover {
-		color: rgba(256, 256, 256, 0.5);
+		color: $lightgreen;
 	}
 }
 .apphoto {
@@ -345,6 +374,7 @@ header {
 			margin: 0;
 			position: relative;
 			margin-left: -30px;
+			color: $black;
 		}
 
 		[name="email"]:focus {
@@ -486,27 +516,23 @@ footer {
 @media (max-width: 767px) {
 	
 	header {
+		.dropdown {
+			display: block;
+		}
 
 		.header-back {
 			background-size: cover;
-			height: 90vw;
+			height: 80vw;
 		}
 		ul {
-			flex-wrap: wrap;
-			padding: 10px 0;
-		}
-
-		li {
-			padding: 15px 6px 5px;	
-		}
-		li:nth-child(3) {
 			display: none;
 		}
+
 		.header-slogan {
-			padding-top: 7px;
+			padding-top: 10px;
 		}
 		h1 {
-			font-size: 5vw;
+			font-size: 6vw;
 			padding: 0;
 			margin: 4px;
 		}
